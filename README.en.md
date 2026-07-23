@@ -1,12 +1,14 @@
 # session-to-knowledge
 
+`session-to-knowledge` selects 1–3 evidence-supported problems from one agent session and turns their diagnosis and resolution into a practical article for developers and junior engineers.
+
+It can summarize the visible conversation or recover an oversized session from a persisted Codex task or transcript in a new session. When HTTP 413 occurs, it processes only content that the host persisted instead of claiming to recover inside the rejected request.
+
 [中文](./README.md) | **English**
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/)
 
-`session-to-knowledge` selects 1–3 evidence-supported problems from one agent session and turns their diagnosis and resolution into a practical article for developers and junior engineers.
-
-It can summarize the visible conversation or recover an oversized session from a persisted Codex task or transcript in a new session. When HTTP 413 occurs, it processes only content that the host persisted instead of claiming to recover inside the rejected request.
+[Install](#quick-install-for-codex) · [Quick Start](#quick-start) · [413 Recovery](#http-413-recovery-boundary) · [Privacy and Evidence](#evidence-and-privacy-gates) · [Testing](#cli-and-testing)
 
 ## Support Status
 

@@ -1,12 +1,14 @@
 # session-to-knowledge
 
+`session-to-knowledge` 从一次 Agent 会话中筛选 1–3 个有证据支持的问题及解决过程，整理成一篇供开发者和初级工程师学习的实战经验文档。
+
+它既能总结当前可见会话，也能在新会话中从持久化的 Codex task 或会话记录恢复超长会话。遇到 HTTP 413 时，它不会假装在原请求内恢复，而是分块处理宿主已经保存的内容。
+
 **中文** | [English](./README.en.md)
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/)
 
-`session-to-knowledge` 从一次 Agent 会话中筛选 1–3 个有证据支持的问题及解决过程，整理成一篇供开发者和初级工程师学习的实战经验文档。
-
-它既能总结当前可见会话，也能在新会话中从持久化的 Codex task 或会话记录恢复超长会话。遇到 HTTP 413 时，它不会假装在原请求内恢复，而是分块处理宿主已经保存的内容。
+[快速安装](#codex-快速安装) · [快速使用](#快速使用) · [413 恢复](#http-413-恢复边界) · [隐私与证据](#证据与隐私门) · [测试](#cli-与测试)
 
 ## 当前支持状态
 
