@@ -1,6 +1,13 @@
 ---
 name: session-to-knowledge
-description: Turn the current agent session or a supplied Codex task/transcript into one evidence-grounded, privacy-reviewed practical knowledge article. Use only when the user explicitly asks for knowledge capture, lessons learned, an experience summary, a session retrospective, a practical case study, or equivalent requests such as “知识沉淀”, “经验总结”, “会话复盘”, “实战经验”, or “知识提炼”. Also use in a new session to recover an oversized or HTTP 413-rejected session from a Codex task UUID or transcript path.
+description: >
+  Turn the current agent session or a supplied Codex task/transcript into one evidence-grounded,
+  privacy-reviewed practical knowledge article. Trigger when the user explicitly asks for knowledge
+  capture, lessons learned, an experience summary, a session retrospective, a practical case study,
+  “知识沉淀”, “经验总结”, “会话复盘”, “实战经验”, or “知识提炼”. Also trigger in a new session to recover
+  an oversized or HTTP 413-rejected session from a Codex task UUID or transcript path. Do NOT trigger
+  for ordinary chat summaries without explicit knowledge-capture intent, or when an oversized source
+  cannot be processed by isolated workers.
 ---
 
 # Session To Knowledge
