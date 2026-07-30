@@ -1,5 +1,7 @@
 ---
 name: session-to-knowledge
+display_name: Session To Knowledge
+display_name_zh: 会话知识沉淀
 description: >
   Turn the current agent session or a supplied Codex task/transcript into one evidence-grounded,
   privacy-reviewed practical knowledge article. Trigger when the user explicitly asks for knowledge
@@ -8,6 +10,10 @@ description: >
   an oversized or HTTP 413-rejected session from a Codex task UUID or transcript path. Do NOT trigger
   for ordinary chat summaries without explicit knowledge-capture intent, or when an oversized source
   cannot be processed by isolated workers.
+version: 0.1.0
+author: BruceL017
+updated_at: 2026-07-23
+origin: own
 ---
 
 # Session To Knowledge

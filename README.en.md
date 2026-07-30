@@ -1,3 +1,12 @@
+---
+description: Turn one agent session into an evidence-grounded practical article with resumable Codex 413 recovery.
+prompt_examples:
+  - prompt: Use $session-to-knowledge to capture reusable knowledge from the current session.
+    scene: Capture the current session
+  - prompt: Use $session-to-knowledge source=<codex-task-uuid> to recover an oversized session.
+    scene: Recover an HTTP 413 session
+---
+
 # session-to-knowledge
 
 `session-to-knowledge` selects 1–3 evidence-supported problems from one agent session and turns their diagnosis and resolution into a practical article for developers and junior engineers.
@@ -48,7 +57,13 @@ Transcript filtering, chunking, and initial redaction use a local Python standar
 
 ## Quick Install For Codex
 
-Clone the repository directly into the global Codex skill directory:
+Install from the company Skill catalog (recommended):
+
+```bash
+tfs install session-to-knowledge --scope user
+```
+
+Alternatively, clone the standalone GitHub repository into the global Codex skill directory:
 
 ```bash
 mkdir -p "$HOME/.codex/skills"
@@ -205,10 +220,10 @@ Run the tests:
 python3 -m unittest discover -s tests -v
 ```
 
-Validate the Codex skill structure:
+Run the company repository validator from the `tranfu-skills` root:
 
 ```bash
-python3 "$HOME/.codex/skills/.system/skill-creator/scripts/quick_validate.py" .
+npm run validate -- --target own-skills/session-to-knowledge
 ```
 
 The synthetic suite covers event allowlisting, internal-content exclusion, message deduplication, archived lookup, damaged JSONL tails, oversized single events, chunk bisection, resumable state, redaction, evidence validation, and final publication gates.
@@ -219,6 +234,7 @@ The synthetic suite covers event allowlisting, internal-content exclusion, messa
 .
 ├── README.md
 ├── README.en.md
+├── README.zh.md
 ├── SKILL.md
 ├── agents/openai.yaml
 ├── references/oversized-sessions.md
@@ -241,6 +257,6 @@ The synthetic suite covers event allowlisting, internal-content exclusion, messa
 
 ## License
 
-This repository does not currently include or select an open-source license.
+This skill is distributed in the `tranfu-skills` company repository under the [MIT License](../../LICENSE).
 
-Public visibility does not grant permission to use, copy, modify, distribute, or sublicense the code. Do not treat this project as open-source licensed software until a license file is added.
+The standalone GitHub source repository does not currently include a separate license. Follow that repository's license notice when installing from the standalone source.
